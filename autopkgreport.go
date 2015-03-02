@@ -57,4 +57,12 @@ func main() {
 		// Print munki imports.
 		fmt.Printf("Imported %v, version %v into catalog %v\n", r.Name, r.Version, r.Catalog)
 	}
+	for _, p := range report.NewPackages {
+		// Print new packages
+		fmt.Printf("New Package %v, version %v\n", p.Id, p.Version)
+	}
+	for _, f := range report.Failures {
+		// Print autopkg failures
+		fmt.Printf("Recipe failed %v\n", f.Recipe)
+	}
 }
